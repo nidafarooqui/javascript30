@@ -1,7 +1,6 @@
 html {
   font-size: 10px;
-  background: url(http://i.imgur.com/b9r5sEL.jpg) bottom center;
-  background-size: cover;
+
 }
 body,html {
   margin: 0;
@@ -12,13 +11,11 @@ body,html {
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
 
 .key {
-  border: .4rem solid black;
   border-radius: .5rem;
   margin: 1rem;
   font-size: 1.5rem;
@@ -26,9 +23,9 @@ body,html {
   transition: all .07s ease;
   width: 10rem;
   text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
+  color: rgb(235, 73, 93);
+  background: rgba(0, 0, 0, 0.15);
+
 }
 
 .playing {
@@ -46,5 +43,41 @@ kbd {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  color: #ffc600;
+  color: #000000;
+}
+
+@media (min-width: 700px) {
+  .container-drums svg {
+    max-height: 65%;
+    -webkit-transform: scale(1.25);
+    transform: scale(1.25);
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: transform 0.6s;
+    -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  }
+}
+
+.container-drums svg {
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin: 7em auto;
+  height: 350px;
+}
+
+.animate {
+  animation-duration: 0.1s;
+  animation-name: playInstrument;
+}
+
+@keyframes playInstrument {
+  from {
+    transform-origin: 50% 50%;
+    transform: scale(0.99);
+  }
+
+  to {
+    transform-origin: 50% 50%;
+    transform: scale(1.05);
+  }
 }
